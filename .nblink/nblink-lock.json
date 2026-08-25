@@ -6,8 +6,8 @@
     "xeus-python",
     "datascience==0.18.1",
     "otter-grader-base",
-    "numpy==2.2.6",
-    "scipy==1.14.1",
+    "numpy>=2.4",
+    "scipy>=1.17",
     "urllib3<2.0"
   ],
   "channels": [
@@ -33,17 +33,6 @@
     ]
   },
   "packages": {
-    "numpy-2.2.6-py313h6394566_1.tar.bz2": {
-      "name": "numpy",
-      "build": "py313h6394566_1",
-      "version": "2.2.6",
-      "subdir": "emscripten-wasm32",
-      "channel": "https://repo.prefix.dev/emscripten-forge-dev",
-      "hash": {
-        "sha256": "0b306a555738eaf8fd309b4797672b75dc57336ca14e96703602d57439e58181"
-      },
-      "size": 6787089
-    },
     "datascience-0.18.1-pyhd8ed1ab_0.conda": {
       "name": "datascience",
       "build": "pyhd8ed1ab_0",
@@ -103,16 +92,29 @@
       },
       "size": 119130
     },
-    "scipy-1.14.1-np22py313h887bebb_3.tar.bz2": {
-      "name": "scipy",
-      "build": "np22py313h887bebb_3",
-      "version": "1.14.1",
+    "numpy-2.4.4-py313h6394566_0.tar.bz2": {
+      "name": "numpy",
+      "build": "py313h6394566_0",
+      "version": "2.4.4",
       "subdir": "emscripten-wasm32",
       "channel": "https://repo.prefix.dev/emscripten-forge-dev",
       "hash": {
-        "sha256": "621f53c8b36777f0bfcbbfbcef37e161d026b9612625c8788c12213a6244ea50"
+        "md5": "5eb9b7f26635ce8154bba997b79bca4b",
+        "sha256": "2d45ab55dd71dd781d35c894a472a37ecc7dc490c7cc4556598f7796226a46d2"
       },
-      "size": 21276704
+      "size": 2641558
+    },
+    "scipy-1.17.1-np22py313h759dc5e_0.tar.bz2": {
+      "name": "scipy",
+      "build": "np22py313h759dc5e_0",
+      "version": "1.17.1",
+      "subdir": "emscripten-wasm32",
+      "channel": "https://repo.prefix.dev/emscripten-forge-dev",
+      "hash": {
+        "md5": "7538bd9ea53b98eb403b39f79bc796f3",
+        "sha256": "a0254f1cc155805e6bb9a7a17aebb4f619292781202dc2e9ccca63ca041f1dad"
+      },
+      "size": 9258788
     },
     "urllib3-1.26.20-pyhd8ed1ab_0.conda": {
       "name": "urllib3",
@@ -697,16 +699,16 @@
       },
       "size": 16185
     },
-    "openblas-0.3.26-he2bab3c_14.tar.bz2": {
-      "name": "openblas",
-      "build": "he2bab3c_14",
-      "version": "0.3.26",
+    "openblas-flang-0.3.31-h4e94343_0.tar.bz2": {
+      "name": "openblas-flang",
+      "build": "h4e94343_0",
+      "version": "0.3.31",
       "subdir": "emscripten-wasm32",
       "channel": "https://repo.prefix.dev/emscripten-forge-dev",
       "hash": {
-        "sha256": "dac0d829218a4dbea71ffaa4ffe395e5173e734b425429ecb5cee7d350c0b18a"
+        "sha256": "a83164e0002ad79374d3011e071746f1e3963a4830588401aa8832695013cc81"
       },
-      "size": 5741800
+      "size": 5481967
     },
     "brotli-python-1.2.0-py313h33caa6c_0.tar.bz2": {
       "name": "brotli-python",
@@ -1772,5 +1774,5 @@
     }
   },
   "pipPackages": {},
-  "id": "3067382906397022"
+  "id": "6416067893751433"
 }

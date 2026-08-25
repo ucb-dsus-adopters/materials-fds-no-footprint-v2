@@ -1,10 +1,18 @@
 # Environment for Notebook.link (JupyterLite / xeus-python, WebAssembly).
 # Solved in-browser by mambajs against emscripten-forge + conda-forge noarch.
 #
-# NOTE: channel order matters. emscripten-forge MUST come first: under strict
-# channel priority, listing conda-forge first makes pyyaml resolve to the
-# conda-forge build, which needs the `yaml` C library that has no
+# NOTE 1 — channel order is load-bearing. emscripten-forge MUST come first:
+# under strict channel priority, listing conda-forge first makes pyyaml resolve
+# to the conda-forge build, which needs the `yaml` C library that has no
 # emscripten-wasm32 build -> otter-grader-base becomes unsolvable.
+#
+# NOTE 2 — do NOT pin numpy to 2.2.x. The 2.2.6 wasm package ships
+# numpy/_core/tests/_natype.py but no __init__.py in that directory, so
+# `numpy._core.tests` is not importable. numpy/testing/_private/utils.py:31
+# does `from numpy._core.tests._natype import pd_NA`, which scipy triggers via
+# `from numpy import *`, so `from datascience import *` dies with
+# ModuleNotFoundError: No module named 'numpy._core.tests'.
+# numpy >=2.4 drops that import entirely.
 #
 # This file is separate from the repo-root environment.yml, which targets
 # Berkeley DataHub and contains packages that cannot run in WASM.
@@ -17,6 +25,6 @@ dependencies:
   - xeus-python
   - datascience==0.18.1
   - otter-grader-base
-  - numpy==2.2.6
-  - scipy==1.14.1
+  - numpy>=2.4
+  - scipy>=1.17
   - urllib3<2.0
